@@ -8,10 +8,7 @@ module.exports = function(grunt) {
           optimization: 2
         },
         files: {
-          "css/button-groups.css": "less/button-groups.less",
-          "css/button-groups.movistar.css": "less/movistar.less",
-          "css/button-groups.o2.css": "less/o2.less",
-          "css/button-groups.vivo.css": "less/vivo.less"
+          "css/button-groups.css": "less/button-groups.less"
         }
       },
       production: {
@@ -21,23 +18,30 @@ module.exports = function(grunt) {
           optimization: 2
         },
         files: {
-          "css/button-groups.min.css": "less/button-groups.less",
-          "css/button-groups.movistar.min.css": "less/movistar.less",
-          "css/button-groups.o2.min.css": "less/o2.less",
-          "css/button-groups.vivo.min.css": "less/vivo.less"
+          "css/button-groups.min.css": "less/button-groups.less"
         }
       }
     },
+
     watch: {
       styles: {
-        files: ['less/**/*.less'], // which files to watch
-        tasks: ['less'],
+        files: ['less/**/*.less'],
+        tasks: ['less', 'autoprefixer'],
         options: {
           nospawn: true
         }
       }
-    }
+    },
+
+    autoprefixer: {
+      options: {
+        browsers: ['last 5 versions']
+      },
+      dist: {
+        src: 'css/*.css'
+      },
+    },
   });
 
-  grunt.registerTask('default', ['less', 'watch']);
+  grunt.registerTask('default', ['less','autoprefixer','watch']);
 };
