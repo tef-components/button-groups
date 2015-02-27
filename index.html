@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/button-groups.min.css">
     <link rel="stylesheet" href="../icons/icons.css">
-    <link id="themeFile" rel="stylesheet" href="../buttons/css/buttons.min.css">
+    <link id="themeFile" rel="stylesheet" href="../buttons/css/buttons.telefonica.min.css">
 
     <style>
       body {
@@ -180,8 +180,7 @@
       var theme = document.getElementById('themeSelector');
       theme.addEventListener('change', function() {
         var link = document.getElementById('themeFile');
-        var name = (theme.value == 'telefonica'? "" : theme.value + ".");
-        link.href = '../buttons/css/buttons.' + name + 'min.css';
+        link.href = '../buttons/css/buttons.' + theme.value + '.min.css';
       });
     </script>
   </body>
