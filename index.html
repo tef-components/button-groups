@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/button-groups.min.css">
     <link rel="stylesheet" href="../icons/icons.css">
-    <link id="themeFile" rel="stylesheet" href="../buttons/css/buttons.telefonica.min.css">
+    <link id="themeFile" rel="stylesheet" href="../theme_telefonica/css/components.telefonica.min.css">
 
     <style>
       body {
         font-family: Helvetica, Arial;
         font-size: 14px;
+        margin-left: 15px;
       }
       header {
         display: block;
@@ -180,7 +181,7 @@
       var theme = document.getElementById('themeSelector');
       theme.addEventListener('change', function() {
         var link = document.getElementById('themeFile');
-        link.href = '../buttons/css/buttons.' + theme.value + '.min.css';
+        link.href = '../theme_'+ theme.value + '/css/components.'+ theme.value + '.min.css';
       });
     </script>
   </body>

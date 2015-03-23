@@ -9,7 +9,7 @@
   list-style: none;
   .clearfix();
 
-  & > * {
+  & > * , ::content > *{
     float: left;
     margin-left: 1px;
 
@@ -18,15 +18,15 @@
       .tef-button { border-radius: 3px 0 0 3px; }
     }
 
-    &:last-child .tef-button { border-radius: 0 3px 3px 0; }
+    &:last-child .tef-button, &:last-child::shadow .tef-button{ border-radius: 0 3px 3px 0; }
   }
 
-  .tef-button { border-radius: 0; }
+  .tef-button, > ::content tef-button::shadow .tef-button { border-radius: 0; }
 
-  > .tef-button { display: block; }
-  > .tef-button:first-child { border-radius: 3px 0 0 3px; }
-  > .tef-button:last-child { border-radius: 0 3px 3px 0; }
-  > .tef-button + .tef-button { margin-left: 1px; }
+  > .tef-button, > ::content ::shadow .tef-button{ display: block; }
+  > .tef-button:first-child, > ::content tef-button:first-child::shadow .tef-button{ border-radius: 3px 0 0 3px; }
+  > .tef-button:last-child, > ::content tef-button:last-child::shadow .tef-button  { border-radius: 0 3px 3px 0; }
+  > .tef-button + .tef-button, ::content tef-button + tef-button { margin-left: 1px; }
 
   // disabled
   &[disabled],
