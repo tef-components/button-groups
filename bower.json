@@ -18,9 +18,8 @@
     "bower_components"
   ],
   "dependencies": {
-    "buttons": "tef-components/buttons"
-  },
-  "devDependencies": {
+    "utils": "tef-components/utils",
+    "buttons": "tef-components/buttons",
     "icons": "tef-components/icons"
   }
 }
