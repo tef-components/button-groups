@@ -2,42 +2,60 @@ module.exports = function(grunt) {
   require('jit-grunt')(grunt);
 
   grunt.initConfig({
-    less: {
-      development: {
-        options: {
-          optimization: 2
-        },
-        files: {
-          "css/button-groups.css": "less/button-groups.less",
-          "css/button-groups.movistar.css": "less/movistar.less",
-          "css/button-groups.o2.css": "less/o2.less",
-          "css/button-groups.vivo.css": "less/vivo.less"
-        }
+    bump: {
+      // upgrade release and push to master
+      options : {
+        files: ['bower.json'],
+        commitFiles: ["-a"],
+        pushTo: 'origin'
+      }
+    },
+
+    exec: {
+      // add new files before commiting
+      add: {
+        command: 'git add -A'
       },
-      production: {
-        options: {
-          compress: true,
-          yuicompress: true,
-          optimization: 2
-        },
-        files: {
-          "css/button-groups.min.css": "less/button-groups.less",
-          "css/button-groups.movistar.min.css": "less/movistar.less",
-          "css/button-groups.o2.min.css": "less/o2.less",
-          "css/button-groups.vivo.min.css": "less/vivo.less"
+
+      // push to gh-pages branch
+      pages: {
+        command: [
+          'git checkout gh-pages',
+          'git pull origin master',
+          'git push origin gh-pages',
+          'git checkout master'
+        ].join('&&')
+      },
+
+      // adds prompted commit message
+      message: {
+        command: function() {
+          var message = grunt.config('gitmessage');
+          return "git commit -am '" + message + "'";
         }
       }
     },
-    watch: {
-      styles: {
-        files: ['less/**/*.less'], // which files to watch
-        tasks: ['less'],
+
+    prompt: {
+      commit: {
         options: {
-          nospawn: true
+          questions: [
+            {
+              config: 'gitmessage',
+              type: 'input',
+              message: 'Commit Message'
+            }
+          ]
         }
       }
     }
   });
 
-  grunt.registerTask('default', ['less', 'watch']);
+  grunt.registerTask('release', [
+    'exec:add',
+    'prompt',
+    'exec:message',
+    'bump',
+    'exec:pages'
+  ]);
 };

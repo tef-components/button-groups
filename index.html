@@ -5,184 +5,182 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>TEF components demo</title>
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="css/button-groups.min.css">
-    <link rel="stylesheet" href="../icons/icons.css">
-    <link id="themeFile" rel="stylesheet" href="../buttons/css/buttons.min.css">
-
+    <link id="themeFile" rel="stylesheet" href="../theme_telefonica/css/components.telefonica.css">
     <style>
-      body {
-        font-family: Helvetica, Arial;
-        font-size: 14px;
-      }
-      header {
+      header[data-columns] { padding-top: 30px; }
+      h1 { margin-top: 0; }
+      header > div { padding-top: 2px; }
+      code {
         display: block;
         overflow: hidden;
-      }
-      header * {
-        display: inline-block;
-        vertical-align: middle;
-      }
-      header span {
-        margin-left: 30px;
-        font-size: 12px;
       }
       style {
         display: block;
         white-space: pre;
-        margin-left: -65px;
+        color: #0086B3;
+        border: 1px solid #cfcece;
+        background: #f2f2f2;
+        margin: 20px 0;
         line-height: 25px;
+        overflow-y: auto;
+        border-radius: 4px;
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>TEF button groups</h1>
-      <span>Change theme</span>
-      <select id="themeSelector">
-        <option value="telefonica">Telefónica</option>
-        <option value="movistar">Movistar</option>
-        <option value="o2">O2</option>
-        <option value="vivo">Vivo</option>
-      </select>
-    </header>
+    <div class="tef-wrapper">
+      <header data-columns="2" data-columns-xs="1">        
+          <h1>TEF button groups</h1>
+          <div>
+            <label>Change theme</label>
+            <div class="tef-dropdown" icon="angle_down">
+              <select id="themeSelector">
+                <option value="telefonica">Telefónica</option>
+                <option value="movistar">Movistar</option>
+                <option value="o2">O2</option>
+                <option value="vivo">Vivo</option>
+              </select>
+            </div>
+          </div>
+        </header>
 
-    <h2>Default list</h2>
-    <ul class="tef-button-group">
-      <li><button class="tef-button">First</button></li>
-      <li><button class="tef-button">Middle</button></li>
-      <li><button class="tef-button">Last</button></li>
-    </ul>
-    <code>
-      <style>
-        <ul class="tef-button-group">
-          <li><button class="tef-button">First</button></li>
-          <li><button class="tef-button">Middle</button></li>
-          <li><button class="tef-button">Last</button></li>
-        </ul>
-      </style>
-    </code>
+      <h2>Default list</h2>
+      <ul class="tef-button-group">
+        <li><button class="tef-button">First</button></li>
+        <li><button class="tef-button">Middle</button></li>
+        <li><button class="tef-button">Last</button></li>
+      </ul>
+      <code>
+        <style>
+          <ul class="tef-button-group">
+            <li><button class="tef-button">First</button></li>
+            <li><button class="tef-button">Middle</button></li>
+            <li><button class="tef-button">Last</button></li>
+          </ul>
+        </style>
+      </code>
 
-    <h2>Default container</h2>
-    <div class="tef-button-group">
-      <button class="tef-button">First</button>
-      <button class="tef-button">Middle</button>
-      <button class="tef-button">Last</button>
-    </div>
-    <code>
-      <style>
-        <div class="tef-button-group">
-          <button class="tef-button">First</button>
-          <button class="tef-button">Middle</button>
-          <button class="tef-button">Last</button>
-        </div>
-      </style>
-    </code>
+      <h2>Default container</h2>
+      <div class="tef-button-group">
+        <button class="tef-button">First</button>
+        <button class="tef-button">Middle</button>
+        <button class="tef-button">Last</button>
+      </div>
+      <code>
+        <style>
+          <div class="tef-button-group">
+            <button class="tef-button">First</button>
+            <button class="tef-button">Middle</button>
+            <button class="tef-button">Last</button>
+          </div>
+        </style>
+      </code>
 
-    <h2>Size</h2>
-    <ul class="tef-button-group">
-      <li><button class="tef-button small">First</button></li>
-      <li><button class="tef-button small">Middle</button></li>
-      <li><button class="tef-button small">Last</button></li>
-    </ul>
-    <ul class="tef-button-group">
-      <li><button class="tef-button large">First</button></li>
-      <li><button class="tef-button large">Middle</button></li>
-      <li><button class="tef-button large">Last</button></li>
-    </ul>
-    <code>
-      <style>
-        <ul class="tef-button-group">
-          <li><button class="tef-button small">First</button></li>
-          <li><button class="tef-button small">Middle</button></li>
-          <li><button class="tef-button small">Last</button></li>
-        </ul>
-        <ul class="tef-button-group">
-          <li><button class="tef-button large">First</button></li>
-          <li><button class="tef-button large">Middle</button></li>
-          <li><button class="tef-button large">Last</button></li>
-        </ul>
-      </style>
-    </code>
+      <h2>Size</h2>
+      <ul class="tef-button-group">
+        <li><button class="tef-button small">First</button></li>
+        <li><button class="tef-button small">Middle</button></li>
+        <li><button class="tef-button small">Last</button></li>
+      </ul>
+      <ul class="tef-button-group">
+        <li><button class="tef-button large">First</button></li>
+        <li><button class="tef-button large">Middle</button></li>
+        <li><button class="tef-button large">Last</button></li>
+      </ul>
+      <code>
+        <style>
+          <ul class="tef-button-group">
+            <li><button class="tef-button small">First</button></li>
+            <li><button class="tef-button small">Middle</button></li>
+            <li><button class="tef-button small">Last</button></li>
+          </ul>
+          <ul class="tef-button-group">
+            <li><button class="tef-button large">First</button></li>
+            <li><button class="tef-button large">Middle</button></li>
+            <li><button class="tef-button large">Last</button></li>
+          </ul>
+        </style>
+      </code>
 
-    <h2>Colors</h2>
-    <ul class="tef-button-group">
-      <li><button class="tef-button">Default</button></li>
-      <li><button class="tef-button positive">Positive</button></li>
-      <li><button class="tef-button negative">Negative</button></li>
-      <li><button class="tef-button subdued">Subdued</button></li>
-      <li><button class="tef-button significant">Significant</button></li>
-    </ul>
-    <code>
-      <style>
-        <ul class="tef-button-group">
-          <li><button class="tef-button">Default</button></li>
-          <li><button class="tef-button positive">Positive</button></li>
-          <li><button class="tef-button negative">Negative</button></li>
-          <li><button class="tef-button subdued">Subdued</button></li>
-          <li><button class="tef-button significant">Significant</button></li>
-        </ul>
-      </style>
-    </code>
+      <h2>Colors</h2>
+      <ul class="tef-button-group">
+        <li><button class="tef-button">Default</button></li>
+        <li><button class="tef-button positive">Positive</button></li>
+        <li><button class="tef-button negative">Negative</button></li>
+        <li><button class="tef-button subdued">Subdued</button></li>
+        <li><button class="tef-button significant">Significant</button></li>
+      </ul>
+      <code>
+        <style>
+          <ul class="tef-button-group">
+            <li><button class="tef-button">Default</button></li>
+            <li><button class="tef-button positive">Positive</button></li>
+            <li><button class="tef-button negative">Negative</button></li>
+            <li><button class="tef-button subdued">Subdued</button></li>
+            <li><button class="tef-button significant">Significant</button></li>
+          </ul>
+        </style>
+      </code>
 
-    <h2>Icons</h2>
-    <ul class="tef-button-group">
-      <li>
-        <button class="tef-button">
-          <span>Close</span><i data-icon="close"></i>
-        </button>
-      </li>
-      <li>
-        <button class="tef-button">
-          <i data-icon="close"></i><span>Close</span>
-        </button>
-      </li>
-      <li><button class="tef-button"><i data-icon="close"></i></button></li>
-    </ul>
-    <code>
-      <style>
-        <ul class="tef-button-group">
-          <li>
-            <button class="tef-button">
-              <span>Close</span><i data-icon="close"></i>
-            </button>
-          </li>
-          <li>
-            <button class="tef-button">
-              <i data-icon="close"></i><span>Close</span>
-            </button>
-          </li>
-          <li><button class="tef-button"><i data-icon="close"></i></button></li>
-        </ul>
-      </style>
-    </code>
+      <h2>Icons</h2>
+      <ul class="tef-button-group">
+        <li>
+          <button class="tef-button">
+            <span>Close</span><i icon="close"></i>
+          </button>
+        </li>
+        <li>
+          <button class="tef-button">
+            <i icon="close"></i><span>Close</span>
+          </button>
+        </li>
+        <li><button class="tef-button"><i icon="close"></i></button></li>
+      </ul>
+      <code>
+        <style>
+          <ul class="tef-button-group">
+            <li>
+              <button class="tef-button">
+                <span>Close</span><i icon="close"></i>
+              </button>
+            </li>
+            <li>
+              <button class="tef-button">
+                <i icon="close"></i><span>Close</span>
+              </button>
+            </li>
+            <li><button class="tef-button"><i icon="close"></i></button></li>
+          </ul>
+        </style>
+      </code>
 
-    <h2>Disabled</h2>
-    <ul class="tef-button-group disabled">
-      <li><button class="tef-button">Default</button></li>
-      <li><button class="tef-button positive">Positive</button></li>
-      <li><button class="tef-button negative">Negative</button></li>
-      <li><button class="tef-button subdued">Subdued</button></li>
-      <li><button class="tef-button significant">Significant</button></li>
-    </ul>
-    <code>
-      <style>
-        <ul class="tef-button-group">
-          <li><button class="tef-button">Default</button></li>
-          <li><button class="tef-button positive">Positive</button></li>
-          <li><button class="tef-button negative">Negative</button></li>
-          <li><button class="tef-button subdued">Subdued</button></li>
-          <li><button class="tef-button significant">Significant</button></li>
-        </ul>
-      </style>
-    </code>
+      <h2>Disabled</h2>
+      <ul class="tef-button-group disabled">
+        <li><button class="tef-button">Default</button></li>
+        <li><button class="tef-button positive">Positive</button></li>
+        <li><button class="tef-button negative">Negative</button></li>
+        <li><button class="tef-button subdued">Subdued</button></li>
+        <li><button class="tef-button significant">Significant</button></li>
+      </ul>
+      <code>
+        <style>
+          <ul class="tef-button-group">
+            <li><button class="tef-button">Default</button></li>
+            <li><button class="tef-button positive">Positive</button></li>
+            <li><button class="tef-button negative">Negative</button></li>
+            <li><button class="tef-button subdued">Subdued</button></li>
+            <li><button class="tef-button significant">Significant</button></li>
+          </ul>
+        </style>
+      </code>
+      </div>
 
-    <script>
-      var theme = document.getElementById('themeSelector');
-      theme.addEventListener('change', function() {
-        var link = document.getElementById('themeFile');
-        var name = (theme.value == 'telefonica'? "" : theme.value + ".");
-        link.href = '../buttons/css/buttons.' + name + 'min.css';
-      });
-    </script>
+      <script>
+        var theme = document.getElementById('themeSelector');
+        theme.addEventListener('change', function() {
+          var link = document.getElementById('themeFile');
+          link.href = '../theme_'+ theme.value + '/css/components.'+ theme.value + '.css';
+        });
+      </script>
   </body>
 </html>

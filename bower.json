@@ -1,6 +1,6 @@
 {
   "name": "button-groups",
-  "version": "0.1.2",
+  "version": "0.2.1",
   "homepage": "https://github.com/tef-components/button-groups",
   "authors": [
     "the TEF components team"
@@ -18,9 +18,8 @@
     "bower_components"
   ],
   "dependencies": {
-    "buttons": "tef-components/buttons"
-  },
-  "devDependencies": {
+    "utils": "tef-components/utils",
+    "buttons": "tef-components/buttons",
     "icons": "tef-components/icons"
   }
 }
